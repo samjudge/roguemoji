@@ -1,0 +1,13 @@
+{
+  "compileOnSave": false,
+  "include": [
+    "index.ts",
+    "src/**/*"
+  ],
+  "compilerOptions": {
+    "outDir": "build/",
+    "sourceMap": true,
+    "target": "es6",
+    "module" : "es2015"
+  }
+}
