@@ -1,10 +1,10 @@
 ﻿import Actor from "./../Actor";
 import Vector2d from "./../../../vector/Vector2d";
-import TextRenderable from "./../../../renderer/interfaces/TextRenderable";
+import TextTableRenderable from "./../../../renderer/interfaces/TextTableRenderable";
 import TextTableSurface from "../../../renderer/surfaces/table/TextTableSurface";
 import TextTableSurfaceCoordinate from "../../../renderer/surfaces/table/TextTableSurfaceCoordinate";
 
-export default class Placeholder implements Actor, TextRenderable {
+export default class Placeholder implements Actor, TextTableRenderable {
   
   private position: Vector2d;
 

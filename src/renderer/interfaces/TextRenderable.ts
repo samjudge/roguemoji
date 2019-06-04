@@ -1,5 +1,5 @@
-import TextTableSurface from "../surfaces/table/TextTableSurface";
+import DomSurface from "../surfaces/dom/DomSurface";
 
-export default interface TextRenderable {
-  renderTo(surface: TextTableSurface) : void;
+export default interface DomRenderable {
+  renderTo(surface: DomSurface) : void;
 }

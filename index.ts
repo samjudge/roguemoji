@@ -1,35 +1,35 @@
-import HtmlCanvasSurface from './src/renderer/surfaces/HtmlCanvasSurface';
-import Vector2d from './src/vector/Vector2d';
-import Circle from './src/game/actors/htmlCanvasRenderableActors/Circle';
-import TextTableSurface from './src/renderer/surfaces/table/TextTableSurface';
-import Placeholder from './src/game/actors/textRenderableActors/Placeholder';
+﻿import Vector2d from './src/vector/Vector2d';
+import DomSurface from './src/renderer/surfaces/dom/DomSurface';
+import Placeholder from  './src/game/actors/domRenderableActors/Placeholder';
 
 window.addEventListener('load',() => {
 
   /* get a htmlcanvas */
-  const htmlTableSurfaceRoot = document.getElementsByTagName('table')[0];
+  const divElementRoot = <HTMLDivElement> document.getElementById('root');
 
   /* create a surface */
-  const surface = new TextTableSurface(
-    htmlTableSurfaceRoot,
-    new Vector2d(10,10)
+  const surface = new DomSurface(
+    divElementRoot,
+    new Vector2d(100,100)
   );
 
   /**
    * testbox
    */
-  let placeholder1 = new Placeholder(
-    new Vector2d(0,0)
+  const mrFrog = new Placeholder(
+    new Vector2d(0,0),
+    '🐸'
   );
-  let placeholder2 = new Placeholder(
-    new Vector2d(4,4)
+  const mrDragon = new Placeholder(
+    new Vector2d(50,50),
+    '🐉'
   );
-  let placeholder3 = new Placeholder(
-    new Vector2d(9,9)
+  const mrRatboi = new Placeholder(
+    new Vector2d(100,100),
+    '🐀'
   );
 
-  placeholder1.renderTo(surface);
-  placeholder2.renderTo(surface);
-  placeholder3.renderTo(surface);
-
+  mrFrog.renderTo(surface);
+  mrDragon.renderTo(surface);
+  mrRatboi.renderTo(surface);
 })
