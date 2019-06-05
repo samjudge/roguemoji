@@ -35,8 +35,8 @@ export default class DomSurface extends Surface {
 
   public drawElement(domNode : HTMLElement, relativePosition : Vector2d) {
     domNode.style.position = 'absolute';
-    domNode.style.left = relativePosition.x.value.toString();
-    domNode.style.top = relativePosition.y.value.toString();
+    domNode.style.left = this.normalToAbsolutePosition(relativePosition).x.value.toString();
+    domNode.style.top = this.normalToAbsolutePosition(relativePosition).y.value.toString();
     this.getRootElement().appendChild(domNode);
   }
 

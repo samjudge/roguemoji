@@ -9,6 +9,11 @@ export default class KeyboardAdapter {
 
   public constructor(handle: EventTarget) {
     this.handle = handle;
+    this.keyDownStates = new Map<string,boolean>();
+    this.keyPressedStates = new Map<string,boolean>();
+    this.keyUpStates = new Map<string,boolean>();
+    this.keyReleasedStates = new Map<string,boolean>();
+
     //handle keydown, keypressed states on keydown event
     this.handle.addEventListener('keydown', (e : KeyboardEvent) => {
       if(this.keyUpStates.has(e.key)) {

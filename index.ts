@@ -33,9 +33,7 @@ window.addEventListener('load',() => {
     '🐀'
   );
 
-  divElementRoot
-
-  const keyboardInputAdapter = new KeyboardAdapter(divElementRoot);
+  const keyboardInputAdapter = new KeyboardAdapter(window);
 
   const timeInit = Date.now();
   let timeNow = timeInit;
@@ -53,7 +51,7 @@ window.addEventListener('load',() => {
       timerDelta += timeDelta;
       if(timerDelta>=timerUpper) {
         timerDelta = 0;
-        if(keyboardInputAdapter.isKeyDown("ArrowDown")) {
+        if(keyboardInputAdapter.isKeyDown("ArrowUp")) {
           let currentPosition = mrDragon.getPosition();
           let newPosition = new Vector2d(
             currentPosition.x.value,
@@ -62,7 +60,7 @@ window.addEventListener('load',() => {
           mrDragon.setPosition(newPosition);
           mrDragon.renderTo(surface);
         }
-        if(keyboardInputAdapter.isKeyDown("ArrowUp")) {
+        if(keyboardInputAdapter.isKeyDown("ArrowDown")) {
           let currentPosition = mrDragon.getPosition();
           let newPosition = new Vector2d(
             currentPosition.x.value,
@@ -97,4 +95,7 @@ window.addEventListener('load',() => {
       loop();
     }, 0);
   }
+
+  loop();
+
 })
