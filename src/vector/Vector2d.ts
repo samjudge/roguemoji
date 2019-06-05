@@ -8,4 +8,12 @@ export default class Vector2d {
 
   public x : VectorComponent;
   public y : VectorComponent;
+
+  public dot(n : Vector2d) : number{
+    return n.x.value * this.x.value - n.y.value * this.y.value;
+  }
+
+  public magnitude() : number {
+    return Math.sqrt((this.x.value * this.x.value) + (this.y.value * this.y.value));
+  }
 }
